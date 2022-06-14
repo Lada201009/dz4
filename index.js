@@ -1,19 +1,21 @@
 let n = +prompt("Введите номер задания от 1 до 5", 5);
-function Task1() {
+
+function task1() {
   let a = 5,
     b = true,
-    c = `java script`;
-  d = "100";
+    c = "java script",
+    d = "100";
   console.log(a, b, c, d);
 }
-function Task2() {
+
+function task2(userName) {
   let greeting = "Hello, ";
-  let userName = prompt(`user name `);
-  console.log(greeting, userName);
-  alert(`Hallo, ${userName}`);
+  console.log(greeting, userName)
+  return console.log(greeting, userName);
 }
-function Task3() {
-  let min = prompt(`enter minutes, 60`);
+
+function task3() {
+  let min = prompt("enter minutes, 60");
   if (min >= 0 && min <= 14) {
     alert("В первую четверть.");
   }
@@ -27,40 +29,39 @@ function Task3() {
     alert("В четвертую четверть.");
   }
 }
-function Task4() {
+
+function task4() {
   let num = 5;
   for (; num <= 50; num++) {
     if (num % 5 === 0) 
     console.log(num);
   }
 }
-function Task5() {
-  let limit1 = prompt("Введите минимальное число ");
-   let limit2 = prompt("Введите максимальное число ");
+function task5(limit1, limit2) {
    let mult = 1;
    for (let i = limit1; i<=limit2; i++){
     mult = mult * i;
    }
-   console.log(limit1, limit2);
-   console.log(mult);
-   alert(mult);
-   return mult;
+   return console.log(mult);
 }
 
 switch (n) {
   case 1:
-    Task1();
+    task1();
     break;
   case 2:
-    Task2();
+    let userName = prompt("user name ");
+    task2(userName);
     break;
   case 3:
-    Task3();
+    task3();
     break;
   case 4:
-    Task4();
+    task4();
     break;
   case 5:
-    Task5();
+    let limit1 = +prompt("Введите минимальное число ");
+   let limit2 = +prompt("Введите максимальное число ");
+    task5(limit1, limit2);
     break;
 }
